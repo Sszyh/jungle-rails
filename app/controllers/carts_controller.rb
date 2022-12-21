@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
 
   def show
+    # root :to => "static#index"
   end
 
   def add_item
