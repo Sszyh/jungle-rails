@@ -17,8 +17,6 @@
     <tbody>
 
     <% @order.line_items.each do |item| %>
-      <%= debug item.product %>
-      # why it include product?
       <%= render 'line_item', line_item: item.product, quantity: item[:quantity] %>
     <% end %>
     </tbody>
@@ -30,7 +28,7 @@
           <%= humanized_money_with_symbol @order.total_cents / 100.0 %>
       </tr>
       <tr>
-        <th colspan="3">email</th>
+        <th colspan="3">Email</th>
         <th>
           <%= @order.email %>
       </tr>

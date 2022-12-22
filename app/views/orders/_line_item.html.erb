@@ -10,11 +10,11 @@
   </td>
 
   <td>
-  <h4><%= quantity %></h4>
+  <p><%= quantity %></p>
 </td>
 
 <td>
-  <h4><%= humanized_money_with_symbol line_item.price_cents / 100 %></h4>
+  <p><%= humanized_money_with_symbol line_item.price_cents / 100.0 %></p>
 </td>
 
 </tr>
