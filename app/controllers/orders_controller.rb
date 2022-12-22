@@ -2,6 +2,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+
+    # how to build a varible which have order detail and product detail?
   end
 
   def create
