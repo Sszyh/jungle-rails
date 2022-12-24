@@ -25,4 +25,5 @@ class Admin::CategoriesController < ApplicationController
       :name
     )
   end
+  # need to figure out how category_params work
 end
