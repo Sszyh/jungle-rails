@@ -1,7 +1,6 @@
 class Admin::CategoriesController < ApplicationController
   def index
     @categories = Category.order(:id).all
-    # whats order mean here?
   end
 
   def new
@@ -25,5 +24,4 @@ class Admin::CategoriesController < ApplicationController
       :name
     )
   end
-  # need to figure out how category_params work
 end
