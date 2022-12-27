@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-
-  # these three get generate by controller, but seems no use?
-  # get 'sessions/new' => it also direct to login page, since we defined '/login' => 'sessions#new',this can be delete 
-  # get 'users/new'
-  # get 'users/create'
+  
   namespace :admin do
     get 'categories/index'
     get 'categories/new'
