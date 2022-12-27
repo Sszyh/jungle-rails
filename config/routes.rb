@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
-  get 'users/new'
+  # these three get generate by controller, but seems no use?
+  # get 'sessions/new' 
+  # get 'users/new'
   # get 'users/create'
   namespace :admin do
     get 'categories/index'
