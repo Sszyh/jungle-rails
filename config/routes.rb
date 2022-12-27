@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  # get 'users/new'
+  get 'sessions/new'
+  get 'users/new'
   # get 'users/create'
   namespace :admin do
     get 'categories/index'
@@ -9,6 +10,10 @@ Rails.application.routes.draw do
   end
   get 'about/index'
   root to: 'products#index'
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
