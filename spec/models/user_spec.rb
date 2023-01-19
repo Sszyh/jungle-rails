@@ -63,4 +63,16 @@ RSpec.describe User, type: :model do
       expect(@user).to_not be_valid
     end
   end
+
+  describe 'password length' do
+    it 'should more than 6' do
+      @user = User.new({
+        name: 'rr',
+        email: 'rr@gmail.com',
+        password: "12",
+        password_confirmation:"12"
+      })
+      expect{@user.save!}.to raise_error(ActiveRecord::RecordInvalid,'Validation failed: Password is too short (minimum is 3 characters)')
+    end
+  end
 end
