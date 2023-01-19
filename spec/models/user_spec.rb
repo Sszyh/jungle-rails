@@ -22,4 +22,23 @@ RSpec.describe User, type: :model do
       expect(@user.password).to be_present
     end
   end
+
+  describe 'Email' do
+    it 'should be unique' do
+      @user = User.new({
+        name: 'Ss',
+        email: 'ss@gmail.com',
+        password: "123",
+        password_confirmation:"123"
+      })
+      @user.save!
+      @user2 = User.new({
+        name: 'Qq',
+        email: 'SS@gmail.com',
+        password: "123",
+        password_confirmation:"123"
+      })
+      expect {@user2.save!}.to raise_error(ActiveRecord::RecordInvalid,'Validation failed: Email has already been taken')
+    end
+  end
 end
