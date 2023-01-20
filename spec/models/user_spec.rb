@@ -76,4 +76,30 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe '.authenticate_with_credentials' do
+    subject(:instance) { described_class.new }
+    it 'should return an instance of the user if successfully authenticated' do
+      @user = User.new({
+        name: 'rr',
+        email: 'rr@gmail.com',
+        password: "123",
+        password_confirmation:"123"
+      })
+      @user.save!
+      @user2 = instance.authenticate_with_credentials('rr@gmail.com','123')
+      expect(@user2).to_not be_nil
+    end
+
+    it 'should return nil if authentication is failed' do
+      @user = User.new({
+        name: 'rr',
+        email: 'rr@gmail.com',
+        password: "123",
+        password_confirmation:"123"
+      })
+      @user.save!
+      @user2 = instance.authenticate_with_credentials('rr@gmail.com','1234')
+      expect(@user2).to be_nil
+    end
+  end
 end
