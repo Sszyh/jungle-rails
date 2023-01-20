@@ -75,4 +75,5 @@ RSpec.describe User, type: :model do
       expect{@user.save!}.to raise_error(ActiveRecord::RecordInvalid,'Validation failed: Password is too short (minimum is 3 characters)')
     end
   end
+
 end
